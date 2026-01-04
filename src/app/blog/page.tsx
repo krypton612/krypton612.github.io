@@ -13,8 +13,12 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   // Extraer categorías únicas
-  const categories = Array.from(
-    new Set(posts.map((post) => post.metadata.category).filter(Boolean))
+  const categories: string[] = Array.from(
+    new Set(
+      posts
+        .map((post) => post.metadata.category)
+        .filter((cat): cat is string => cat !== undefined)
+    )
   );
 
   const sortedPosts = posts.sort((a, b) => {

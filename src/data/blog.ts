@@ -8,12 +8,8 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-};
+// Importa los tipos desde el archivo de tipos
+import type { BlogPost, BlogPostMetadata } from "@/types/blog";
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
@@ -38,11 +34,23 @@ export async function markdownToHTML(markdown: string) {
   return p.toString();
 }
 
-export async function getPost(slug: string) {
+export async function getPost(slug: string): Promise<BlogPost> {
   const filePath = path.join("content", `${slug}.mdx`);
   let source = fs.readFileSync(filePath, "utf-8");
-  const { content: rawContent, data: metadata } = matter(source);
+  const { content: rawContent, data } = matter(source);
   const content = await markdownToHTML(rawContent);
+  
+  // Aseguramos que el metadata tenga la estructura correcta
+  const metadata: BlogPostMetadata = {
+    title: data.title || "Sin título",
+    publishedAt: data.publishedAt || new Date().toISOString().split('T')[0],
+    summary: data.summary,
+    category: data.category,
+    image: data.image,
+    series: data.series,
+    seriesOrder: data.seriesOrder,
+  };
+
   return {
     source: content,
     metadata,
@@ -50,21 +58,16 @@ export async function getPost(slug: string) {
   };
 }
 
-async function getAllPosts(dir: string) {
+async function getAllPosts(dir: string): Promise<BlogPost[]> {
   let mdxFiles = getMDXFiles(dir);
   return Promise.all(
     mdxFiles.map(async (file) => {
       let slug = path.basename(file, path.extname(file));
-      let { metadata, source } = await getPost(slug);
-      return {
-        metadata,
-        slug,
-        source,
-      };
+      return await getPost(slug);
     }),
   );
 }
 
-export async function getBlogPosts() {
+export async function getBlogPosts(): Promise<BlogPost[]> {
   return getAllPosts(path.join(process.cwd(), "content"));
 }

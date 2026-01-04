@@ -124,7 +124,7 @@ export default async function Blog({
                 href={`/blog`}
                 className={`text-xs px-2 py-1 rounded`}
               >
-                Blogs
+                Blog
             </Link>
             {seriesInfo.all.map((seriesPost) => (
               <Link

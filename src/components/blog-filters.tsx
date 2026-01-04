@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import BlurFade from "@/components/magicui/blur-fade";
 import { Search, X } from "lucide-react";
+import { BlogPost } from "@/types/blog";
 
 interface Post {
   slug: string;
@@ -16,7 +17,7 @@ interface Post {
 }
 
 interface BlogFiltersProps {
-  posts: Post[];
+  posts: BlogPost[];
   categories: string[];
   blurDelay: number;
 }
