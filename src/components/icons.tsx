@@ -23,6 +23,40 @@ export const Icons = {
       />
     </svg>
   ),
+  drawio: (props: IconProps) => (
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" {...props} fill="#000000">
+        <title>drawio </title>
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <title>file_type_drawio</title>
+          <rect x="2" y="2" width="28" height="28" rx="1.12" style={{ fill: "#f08705" }}></rect>
+          <path d="M16.861,9.168l3.02-3.187L30,16.094V28.88A1.119,1.119,0,0,1,28.88,30H11.316L5.931,24.593Z" style={{ fill: "#df6c0c", fillRule: "evenodd" }}></path>
+          <path d="M25.24,17.96H21.946l-3.071-5.32h.2a1.119,1.119,0,0,0,1.12-1.12V6.76a1.119,1.119,0,0,0-1.12-1.12H12.92A1.119,1.119,0,0,0,11.8,6.76v4.76a1.119,1.119,0,0,0,1.12,1.12h.205l-3.071,5.32H6.76a1.119,1.119,0,0,0-1.12,1.12v4.76a1.119,1.119,0,0,0,1.12,1.12h6.16a1.119,1.119,0,0,0,1.12-1.12V19.08a1.119,1.119,0,0,0-1.12-1.12h-.927l3.072-5.32h1.87l3.071,5.32H19.08a1.119,1.119,0,0,0-1.12,1.12v4.76a1.119,1.119,0,0,0,1.12,1.12h6.16a1.119,1.119,0,0,0,1.12-1.12V19.08A1.119,1.119,0,0,0,25.24,17.96Z" style={{ fill: "#fff" }}></path>
+          </g>
+    </svg>
+  )
+  ,
+  ethereum: (props: IconProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+    viewBox="0 0 784.37 1277.39"
+    >
+      <g id="Layer_x0020_1">
+        <metadata id="CorelCorpID_0Corel-Layer"/>
+        <g id="_1421394342400">
+          <g>
+            <polygon fill="#343434" fill-rule="nonzero" points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54 "/>
+            <polygon fill="#8C8C8C" fill-rule="nonzero" points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33 "/>
+        <polygon fill="#3C3C3B" fill-rule="nonzero" points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89 "/>
+        <polygon fill="#8C8C8C" fill-rule="nonzero" points="392.07,1277.38 392.07,956.52 -0,724.89 "/>
+        <polygon fill="#141414" fill-rule="nonzero" points="392.07,882.29 784.13,650.54 392.07,472.33 "/>
+        <polygon fill="#393939" fill-rule="nonzero" points="0,650.54 392.07,882.29 392.07,472.33 "/>
+      </g>
+      </g>
+    </g>
+    </svg>
+  )
+  ,
   youtube: (props: IconProps) => (
     <svg
       width="32px"
