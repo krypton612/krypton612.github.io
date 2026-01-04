@@ -1,0 +1,43 @@
+---
+title: "Introducción a React Hooks - Parte 1"
+publishedAt: "2024-06-18"
+summary: "Aprende los fundamentos de React Hooks desde cero"
+category: "Tutorial"
+series: "react-hooks-guide"
+seriesOrder: 1
+---
+
+# Introducción a React Hooks
+
+Bienvenido a esta serie sobre React Hooks. En esta primera parte, vamos a explorar qué son los hooks y por qué son tan importantes.
+
+## ¿Qué son los React Hooks?
+
+Los hooks son funciones especiales que te permiten "enganchar" características de React en componentes funcionales.
+
+```jsx
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    
+      Has hecho clic {count} veces
+      <button onClick={() => setCount(count + 1)}>
+        Incrementar
+      
+    
+  );
+}
+```
+
+## Hooks más comunes
+
+| Hook | Propósito |
+| -------- | -------- |
+| useState | Manejar estado local |
+| useEffect | Efectos secundarios |
+| useContext | Consumir contexto |
+
+En la siguiente parte de esta serie, profundizaremos en `useState` y `useEffect`.
